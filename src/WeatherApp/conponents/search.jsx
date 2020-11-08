@@ -95,7 +95,8 @@ const Search = ({ setData, setBool, bool }) => {
                 getWeather(e.target.value);
               }
             }}
-          />
+          />{" "}
+          <hr />
           <div className="cout">
             <div
               className="icon"

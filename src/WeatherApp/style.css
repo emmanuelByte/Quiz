@@ -9,6 +9,7 @@ body {
   background-image: url(WeatherBg.jpg);
   background-size: cover;
   background-repeat: no-repeat;
+  width: 100%;
   font-family: "Montserrat";
   position: relative;
   padding: 2rem;
@@ -19,6 +20,7 @@ body {
   align-items: center;
   width: 100%;
   gap: 2rem;
+  margin: 0 auto;
   justify-content: center;
   height: calc(100vh - 64px);
 }
@@ -42,8 +44,12 @@ body {
   display: flex;
   flex-direction: row-reverse;
   justify-self: center;
+  align-items: center;
   /* background-color: aqua; */
   justify-self: end;
+}
+hr {
+  height: 100%;
 }
 .search_engine {
   display: flex;
@@ -140,4 +146,20 @@ header h1 {
 }
 .img ~ div > p:first-of-type {
   font-size: 2rem;
+}
+@media only screen and (max-width: 375px) {
+  header h1 {
+    font-size: 2rem;
+  }
+  .mainweather {
+    flex-direction: column;
+    width: fit-content;
+    font-size: 12px;
+    align-self: center;
+  }
+  .search input {
+    font-size: 1rem;
+    width: 125px;
+    height: 20px;
+  }
 }
