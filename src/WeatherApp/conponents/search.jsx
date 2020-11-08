@@ -23,12 +23,11 @@ const Search = ({ setData, setBool, bool }) => {
   const key = "910f148c38b5d0f018343257872adabf";
   // "84f0c05e16abc57b03ca8fa00b59f78e";
   useEffect(() => {
-    if (city) console.log(city);
+    // if (city) console.log(city);
   }, [city]);
   function v(e, arr = countries) {
     let v = e.target.value;
     v = v.slice(0, 1).toUpperCase() + v.slice(1).toLowerCase();
-
     return setDropdown(arr.filter((ele) => ele.name.includes(v)));
   }
   async function getWeather(c) {
@@ -37,7 +36,7 @@ const Search = ({ setData, setBool, bool }) => {
     const cors = "https://cors-anywhere.herokuapp.com/";
     let url = `${cors}http://api.openweathermap.org/data/2.5/weather?q=${c}&appid=${key}&units=metric`;
 
-    console.log(c, "city");
+    // console.log(c, "city");
     if (country) {
       console.log(`getting weather from ${c},${country}`);
       url = `${cors}http://api.openweathermap.org/data/2.5/weather?q=${
@@ -49,17 +48,16 @@ const Search = ({ setData, setBool, bool }) => {
         return (pr += 45);
       });
 
-      console.log(roll);
+      // console.log(roll);
     }, 200);
-    fetch(url, {
-      headers: {},
-    })
+    fetch(url)
       .then((res) => {
+        console.log(res.status);
         if (res.status >= 400) return null;
         else return res.json();
       })
       .then((d) => {
-        console.log(d);
+        // console.log(d);
         setData({ ...d });
         setRoll(0);
         clearInterval(x);
@@ -93,7 +91,7 @@ const Search = ({ setData, setBool, bool }) => {
             placeholder="Enter City"
             onKeyPress={(e) => {
               if (e.key === "Enter") {
-                console.log(e.target.value);
+                // console.log(e.target.value);
                 getWeather(e.target.value);
               }
             }}

@@ -38,7 +38,7 @@ body {
 }
 /* .search input:last-of-type */
 .cout {
-  width: 30%;
+  /* width: 30%; */
   display: flex;
   flex-direction: row-reverse;
   justify-self: center;
